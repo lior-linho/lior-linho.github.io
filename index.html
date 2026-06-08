@@ -80,21 +80,59 @@
     .hero::before {
       content: "";
       position: absolute;
-      inset: 0;
-      background-image:
+      inset: -8%;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(255,255,255,0.75) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 28% 62%, rgba(255,255,255,0.55) 0 1px, transparent 1.4px),
+        radial-gradient(circle at 73% 24%, rgba(255,255,255,0.70) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 88% 70%, rgba(255,255,255,0.50) 0 1px, transparent 1.4px),
+
         linear-gradient(
-          to right,
-          rgba(2, 3, 10, 0.90) 0%,
-          rgba(2, 3, 10, 0.70) 33%,
-          rgba(2, 3, 10, 0.42) 62%,
-          rgba(2, 3, 10, 0.48) 100%
+          118deg,
+          transparent 0%,
+          transparent 25%,
+          rgba(120, 125, 120, 0.10) 32%,
+          rgba(215, 205, 178, 0.26) 40%,
+          rgba(250, 242, 214, 0.42) 48%,
+          rgba(180, 174, 158, 0.22) 55%,
+          rgba(36, 30, 28, 0.34) 62%,
+          transparent 74%,
+          transparent 100%
         ),
-        url("images/milkyway.jpg");
-      background-size: cover;
-      background-position: center center;
-      background-repeat: no-repeat;
-      transform: scale(1.04);
-      animation: slowZoom 28s ease-in-out infinite alternate;
+
+        radial-gradient(ellipse at 44% 48%, rgba(255, 245, 210, 0.22), transparent 18%),
+        radial-gradient(ellipse at 36% 57%, rgba(95, 115, 135, 0.24), transparent 25%),
+        radial-gradient(ellipse at 58% 42%, rgba(70, 60, 52, 0.24), transparent 24%),
+        radial-gradient(circle at 70% 35%, rgba(80, 105, 150, 0.22), transparent 28%),
+        linear-gradient(120deg, #02030a 0%, #07101d 42%, #03040d 100%);
+
+      background-size:
+        180px 180px,
+        260px 260px,
+        220px 220px,
+        320px 320px,
+        100% 100%,
+        100% 100%,
+        100% 100%,
+        100% 100%,
+        100% 100%,
+        100% 100%;
+
+      background-position:
+        0 0,
+        60px 90px,
+        120px 40px,
+        30px 140px,
+        center,
+        center,
+        center,
+        center,
+        center,
+        center;
+
+      filter: contrast(1.08) brightness(0.90);
+      transform: scale(1.06) translateY(0);
+      animation: galaxyDrift 36s ease-in-out infinite alternate;
       z-index: 0;
     }
 
@@ -103,8 +141,19 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(circle at 72% 42%, rgba(255, 255, 255, 0.10), transparent 22%),
-        linear-gradient(to bottom, rgba(2, 3, 10, 0.06) 0%, rgba(2, 3, 10, 0.42) 100%);
+        linear-gradient(
+          to right,
+          rgba(2, 3, 10, 0.92) 0%,
+          rgba(2, 3, 10, 0.70) 28%,
+          rgba(2, 3, 10, 0.38) 58%,
+          rgba(2, 3, 10, 0.62) 100%
+        ),
+        linear-gradient(
+          to bottom,
+          rgba(2, 3, 10, 0.10) 0%,
+          rgba(2, 3, 10, 0.08) 48%,
+          rgba(2, 3, 10, 0.88) 100%
+        );
       z-index: 1;
     }
 
@@ -113,7 +162,7 @@
       z-index: 2;
       max-width: 900px;
       margin-left: 20vw;
-      padding-top: 0;
+      padding-top: 6vh;
     }
 
     .eyebrow {
@@ -127,7 +176,7 @@
     h1 {
       margin: 0;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(4rem, 9.5vw, 8.3rem);
+      font-size: clamp(3.8rem, 8.5vw, 7.6rem);
       line-height: 0.9;
       font-weight: 400;
       letter-spacing: -0.075em;
@@ -236,12 +285,15 @@
       font-size: 0.9rem;
     }
 
-    @keyframes slowZoom {
+    @keyframes galaxyDrift {
       from {
-        transform: scale(1.03);
+        transform: scale(1.04) translate3d(-1.5vw, -1vh, 0) rotate(0deg);
+        filter: contrast(1.05) brightness(0.84);
       }
+
       to {
-        transform: scale(1.09);
+        transform: scale(1.12) translate3d(2.5vw, 1.5vh, 0) rotate(0.4deg);
+        filter: contrast(1.16) brightness(0.98);
       }
     }
 
@@ -266,6 +318,7 @@
 
       .hero-content {
         margin-left: 0;
+        padding-top: 6vh;
       }
 
       h1 {
