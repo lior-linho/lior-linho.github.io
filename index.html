@@ -13,7 +13,6 @@
       --soft: rgba(255, 255, 255, 0.72);
       --line: rgba(255, 255, 255, 0.18);
       --line-soft: rgba(255, 255, 255, 0.08);
-      --accent: #f2f7ff;
     }
 
     * {
@@ -31,106 +30,6 @@
       color: var(--text);
       background: var(--bg);
       overflow-x: hidden;
-    }
-
-    .space-bg {
-      position: fixed;
-      inset: 0;
-      z-index: -10;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 68% 38%, rgba(255, 159, 67, 0.22), transparent 17%),
-        radial-gradient(circle at 30% 44%, rgba(72, 134, 255, 0.20), transparent 24%),
-        linear-gradient(115deg, #02030a 0%, #071221 45%, #030516 100%);
-    }
-
-    .stars {
-      position: absolute;
-      inset: 0;
-      background-image:
-        radial-gradient(circle, rgba(255,255,255,0.75) 1px, transparent 1px),
-        radial-gradient(circle, rgba(255,255,255,0.38) 1px, transparent 1px);
-      background-size: 170px 170px, 280px 280px;
-      background-position: 0 0, 80px 120px;
-      opacity: 0.22;
-      animation: driftStars 95s linear infinite;
-    }
-
-    .solar-core {
-      position: absolute;
-      width: 36vw;
-      height: 36vw;
-      min-width: 420px;
-      min-height: 420px;
-      right: 12vw;
-      top: 18vh;
-      border-radius: 50%;
-      background:
-        radial-gradient(circle at 45% 42%, rgba(255, 236, 178, 0.85), rgba(255, 159, 67, 0.48) 28%, rgba(255, 111, 48, 0.18) 48%, transparent 67%);
-      filter: blur(2px);
-      opacity: 0.58;
-      animation: slowPulse 18s ease-in-out infinite alternate;
-    }
-
-    .nebula {
-      position: absolute;
-      width: 70vw;
-      height: 70vw;
-      border-radius: 999px;
-      filter: blur(90px);
-      opacity: 0.28;
-      mix-blend-mode: screen;
-    }
-
-    .nebula-one {
-      left: -18vw;
-      top: 22vh;
-      background: radial-gradient(circle, rgba(63, 123, 255, 0.78), transparent 62%);
-      animation: slowFloatOne 32s ease-in-out infinite alternate;
-    }
-
-    .nebula-two {
-      right: -24vw;
-      top: -16vh;
-      background: radial-gradient(circle, rgba(255, 138, 60, 0.64), transparent 60%);
-      animation: slowFloatTwo 38s ease-in-out infinite alternate;
-    }
-
-    .wave {
-      position: absolute;
-      left: -18vw;
-      top: 31vh;
-      width: 138vw;
-      height: 43vh;
-      opacity: 0.42;
-      background:
-        linear-gradient(100deg, transparent 0%, rgba(255,255,255,0.08) 33%, rgba(255,196,122,0.18) 49%, rgba(185,210,255,0.13) 64%, transparent 100%);
-      filter: blur(24px);
-      transform: rotate(-4deg);
-      animation: wavePush 24s ease-in-out infinite alternate;
-    }
-
-    .wave::before,
-    .wave::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      border-radius: 50%;
-      transform: skewY(-7deg);
-    }
-
-    .wave::before {
-      top: 32%;
-      height: 34%;
-      border-top: 1px solid rgba(255, 255, 255, 0.22);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.10);
-    }
-
-    .wave::after {
-      top: 43%;
-      height: 28%;
-      border-top: 1px solid rgba(255, 198, 122, 0.16);
     }
 
     main {
@@ -169,16 +68,52 @@
     }
 
     .hero {
+      position: relative;
       min-height: 100vh;
       display: flex;
       align-items: center;
       padding: 9vh 8vw;
+      overflow: hidden;
+      background: #02030a;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(
+          to right,
+          rgba(2, 3, 10, 0.90) 0%,
+          rgba(2, 3, 10, 0.70) 33%,
+          rgba(2, 3, 10, 0.42) 62%,
+          rgba(2, 3, 10, 0.48) 100%
+        ),
+        url("images/milkyway.jpg");
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      transform: scale(1.04);
+      animation: slowZoom 28s ease-in-out infinite alternate;
+      z-index: 0;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 72% 42%, rgba(255, 255, 255, 0.10), transparent 22%),
+        linear-gradient(to bottom, rgba(2, 3, 10, 0.06) 0%, rgba(2, 3, 10, 0.42) 100%);
+      z-index: 1;
     }
 
     .hero-content {
+      position: relative;
+      z-index: 2;
       max-width: 900px;
-      margin-left: 18vw;
-      padding-top: 4vh;
+      margin-left: 20vw;
+      padding-top: 0;
     }
 
     .eyebrow {
@@ -192,11 +127,11 @@
     h1 {
       margin: 0;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(4.2rem, 11vw, 9.6rem);
+      font-size: clamp(4rem, 9.5vw, 8.3rem);
       line-height: 0.9;
       font-weight: 400;
       letter-spacing: -0.075em;
-      text-shadow: 0 18px 70px rgba(0, 0, 0, 0.55);
+      text-shadow: 0 18px 70px rgba(0, 0, 0, 0.58);
     }
 
     .subtitle {
@@ -207,7 +142,7 @@
     }
 
     .hero-text {
-      max-width: 720px;
+      max-width: 780px;
       margin: 30px 0 0;
       color: var(--muted);
       font-size: 1.05rem;
@@ -228,8 +163,7 @@
 
     .content-wrap {
       padding: 20px 0 88px;
-      background:
-        linear-gradient(to bottom, transparent 0%, rgba(2, 3, 10, 0.72) 8%, rgba(2, 3, 10, 0.92) 100%);
+      background: #02030a;
     }
 
     .content-section {
@@ -302,50 +236,12 @@
       font-size: 0.9rem;
     }
 
-    @keyframes driftStars {
+    @keyframes slowZoom {
       from {
-        transform: translate3d(0, 0, 0);
+        transform: scale(1.03);
       }
       to {
-        transform: translate3d(-170px, -90px, 0);
-      }
-    }
-
-    @keyframes slowPulse {
-      from {
-        transform: scale(1);
-        opacity: 0.48;
-      }
-      to {
-        transform: scale(1.08);
-        opacity: 0.64;
-      }
-    }
-
-    @keyframes slowFloatOne {
-      from {
-        transform: translate3d(0, 0, 0) scale(1);
-      }
-      to {
-        transform: translate3d(8vw, -5vh, 0) scale(1.1);
-      }
-    }
-
-    @keyframes slowFloatTwo {
-      from {
-        transform: translate3d(0, 0, 0) scale(1);
-      }
-      to {
-        transform: translate3d(-7vw, 6vh, 0) scale(1.12);
-      }
-    }
-
-    @keyframes wavePush {
-      from {
-        transform: translateX(-4vw) rotate(-4deg) scaleY(1);
-      }
-      to {
-        transform: translateX(7vw) rotate(-2deg) scaleY(1.18);
+        transform: scale(1.09);
       }
     }
 
@@ -372,12 +268,6 @@
         margin-left: 0;
       }
 
-      .solar-core {
-        right: -28vw;
-        top: 20vh;
-        opacity: 0.38;
-      }
-
       h1 {
         font-size: clamp(3.5rem, 17vw, 6.5rem);
       }
@@ -386,14 +276,6 @@
 </head>
 
 <body>
-  <div class="space-bg">
-    <div class="solar-core"></div>
-    <div class="nebula nebula-one"></div>
-    <div class="nebula nebula-two"></div>
-    <div class="wave"></div>
-    <div class="stars"></div>
-  </div>
-
   <nav class="side-nav">
     <a class="brand" href="#home">Lior<br />Linho</a>
     <a href="#home">Home</a>
@@ -409,6 +291,11 @@
         <p class="eyebrow">Personal Academic Website</p>
         <h1>Lior Linho</h1>
         <p class="subtitle">Astrophysics · Scientific Computing · Data Science</p>
+        <p class="hero-text">
+          I am preparing to study Physics at LMU Munich and Data Science at the Technical University of Munich,
+          with interests in astrophysics, scientific computing, and data-driven research.
+          I am currently seeking research opportunities in astrophysics.
+        </p>
         <a class="scroll-link" href="#about">Explore ↓</a>
       </div>
     </section>
