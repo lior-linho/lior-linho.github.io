@@ -183,32 +183,33 @@
       text-shadow: 0 18px 70px rgba(0, 0, 0, 0.58);
     }
 
-    .subtitle {
-      margin: 26px 0 0;
+    .hero-greeting {
+      margin: 28px 0 0;
       color: #e4edf9;
-      font-size: clamp(1rem, 2vw, 1.45rem);
-      letter-spacing: 0.01em;
+      font-size: clamp(1.15rem, 2vw, 1.55rem);
+      line-height: 1.5;
+      font-weight: 500;
     }
 
     .hero-text {
-      max-width: 780px;
-      margin: 30px 0 0;
+      max-width: 900px;
+      margin: 24px 0 0;
       color: var(--muted);
       font-size: 1.05rem;
       line-height: 1.85;
     }
 
     .hero-text p {
-      margin: 0 0 14px;
+      margin: 0;
       color: var(--muted);
       font-size: inherit;
       line-height: inherit;
       font-weight: 400;
     }
 
-    .hero-text p:first-child {
-      color: #e4edf9;
-      font-weight: 500;
+    .hero-text strong {
+      color: #eef4ff;
+      font-weight: 600;
     }
 
     .scroll-link {
@@ -406,14 +407,16 @@
       <div class="hero-content">
         <p class="eyebrow">Personal Website</p>
         <h1>Lior Linho</h1>
-        <p class="subtitle">Astrophysics · Scientific Computing · Data Science</p>
+
+        <p class="hero-greeting">Hi there!</p>
 
         <div class="hero-text">
-          <p>Hi there!</p>
           <p>
-            I am pursuing two B.Sc. degrees: Physics at LMU Munich and Data Science at TUM,
-            currently exploring early-stage research interests in astrophysics, scientific computing,
-            and data-driven astronomy.
+            I am pursuing two B.Sc. degrees:
+            <strong>Physics at LMU Munich</strong> and <strong>Data Science at TUM</strong>,
+            currently exploring early-stage research interests in
+            <strong>astrophysics</strong>, <strong>scientific computing</strong>, and
+            <strong>data-driven astronomy</strong>.
           </p>
         </div>
 
