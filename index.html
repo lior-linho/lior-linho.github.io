@@ -272,6 +272,55 @@
       padding-top: 0;
     }
 
+    .keywords-line {
+      margin-top: 18px;
+      color: rgba(255, 255, 255, 0.62) !important;
+      font-size: 0.92rem !important;
+      line-height: 1.7 !important;
+      letter-spacing: 0.01em;
+    }
+
+    .keywords-line span {
+      margin: 0 8px;
+      color: rgba(255, 255, 255, 0.34);
+    }
+
+    .project-details {
+      margin-top: 18px;
+      color: #d3dbea;
+    }
+
+    .project-details summary {
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 0.94rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      list-style: none;
+    }
+
+    .project-details summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .project-details summary::before {
+      content: "▸";
+      font-size: 0.8rem;
+      transition: transform 0.2s ease;
+    }
+
+    .project-details[open] summary::before {
+      transform: rotate(90deg);
+    }
+
+    .project-details p {
+      margin-top: 16px;
+      color: rgba(211, 219, 234, 0.82);
+    }
+
     .muted {
       color: var(--muted) !important;
     }
@@ -341,13 +390,12 @@
   <main>
     <section class="hero" id="home">
       <div class="hero-content">
-        <p class="eyebrow">Personal Academic Website</p>
+        <p class="eyebrow">Personal Website</p>
         <h1>Lior Linho</h1>
         <p class="subtitle">Astrophysics · Scientific Computing · Data Science</p>
         <p class="hero-text">
-          I am studying Physics at LMU Munich and Data Science at the Technical University of Munich,
-          with interests in astrophysics, scientific computing, and data-driven research.
-          I am currently seeking research opportunities in astrophysics.
+          Hi there! I am pursuing two B.Sc. degrees: Physics at LMU Munich and Data Science at TUM.
+          I am currently exploring early-stage research interests in astrophysics, scientific computing, and data-driven astronomy.
         </p>
         <a class="scroll-link" href="#about">Explore ↓</a>
       </div>
@@ -380,14 +428,32 @@
       </section>
 
       <section class="content-section" id="projects">
-        <h2>Selected Projects</h2>
+        <h2>Research, Software & Product Work</h2>
 
         <div class="project">
-          <h3>Gaia–LAMOST Galactic Archaeology Project</h3>
+          <h3>Machine Learning Assisted Chemo-Dynamical Analysis of Milky Way Stellar Populations Using Gaia DR3 and LAMOST</h3>
+
           <p>
-            Research-oriented project exploring Milky Way stellar populations using
-            Gaia DR3 astrometry and LAMOST spectroscopy.
+            An independent research-oriented project in Galactic Archaeology combining Gaia DR3 astrometry
+            with LAMOST stellar spectroscopy to investigate the chemo-dynamical structure of Milky Way
+            stellar populations.
           </p>
+
+          <p class="keywords-line">
+            Gaia DR3 <span>·</span> LAMOST <span>·</span> Galactic Archaeology <span>·</span>
+            Chemo-dynamics <span>·</span> Stellar Populations <span>·</span> Machine Learning
+          </p>
+
+          <details class="project-details">
+            <summary>Project details</summary>
+            <p>
+              The project includes catalogue exploration, Gaia–LAMOST cross-matching, stellar parameter
+              validation, distance and kinematic feature construction, colour–magnitude and velocity-space
+              visualization, and machine-learning-assisted identification of candidate stellar population
+              structures.
+            </p>
+          </details>
+
           <p>
             <a href="https://github.com/lior-linho/gaia-lamost-galactic-archaeology">
               View project on GitHub
@@ -396,13 +462,63 @@
         </div>
 
         <div class="project">
-          <h3>OpenMed Medical Simulation Software</h3>
+          <h3>OpenMed: Interactive Medical Simulation Software for Cardiovascular Intervention Training</h3>
+
           <p>
-            Medical simulation software project with interactive 3D visualization
-            and research-oriented workflow design.
+            A research-oriented medical simulation software project focused on interactive 3D visualization,
+            procedural workflow design, and lightweight simulation interfaces for cardiovascular intervention
+            training and experimentation.
           </p>
+
+          <p class="keywords-line">
+            Medical Simulation <span>·</span> Cardiovascular Intervention <span>·</span> 3D Visualization <span>·</span>
+            React <span>·</span> Three.js <span>·</span> Research Software
+          </p>
+
+          <details class="project-details">
+            <summary>Project details</summary>
+            <p>
+              The project develops a browser-based simulation environment with 3D anatomical visualization,
+              dual-view interaction design, guidewire control logic, procedural state management, parameter
+              panels, workflow tracking, and exportable interaction metrics for research-oriented medical
+              simulation workflows.
+            </p>
+          </details>
+
           <p>
             <a href="https://github.com/lior-linho/OpenMed">
+              View project on GitHub
+            </a>
+          </p>
+        </div>
+
+        <div class="project">
+          <h3>Geo Sales Automation MVP: AI-Assisted Localized Content Generation and Distribution Workflow</h3>
+
+          <p>
+            An independently designed and implemented internship project focused on building a product-style
+            MVP for AI-assisted localized sales content generation, channel-specific post creation, and
+            lightweight distribution workflow management.
+          </p>
+
+          <p class="keywords-line">
+            Independent Internship Project <span>·</span> Product MVP <span>·</span> AI Content Generation <span>·</span>
+            Sales Automation <span>·</span> Geo-localized Marketing <span>·</span> React <span>·</span>
+            Express <span>·</span> OpenAI API
+          </p>
+
+          <details class="project-details">
+            <summary>Project details</summary>
+            <p>
+              I independently built the MVP from frontend to backend, including a React-based interface,
+              an Express content-generation API, structured post outputs, channel-specific content formats,
+              geo-keyword handling, distribution queue management, CSV export, and fallback handling for API
+              rate limits.
+            </p>
+          </details>
+
+          <p>
+            <a href="https://github.com/lior-linho/geo-sales-mvp">
               View project on GitHub
             </a>
           </p>
