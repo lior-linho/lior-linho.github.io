@@ -198,6 +198,19 @@
       line-height: 1.85;
     }
 
+    .hero-text p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: inherit;
+      line-height: inherit;
+      font-weight: 400;
+    }
+
+    .hero-text p:first-child {
+      color: #e4edf9;
+      font-weight: 500;
+    }
+
     .scroll-link {
       display: inline-block;
       margin-top: 42px;
@@ -394,11 +407,16 @@
         <p class="eyebrow">Personal Website</p>
         <h1>Lior Linho</h1>
         <p class="subtitle">Astrophysics · Scientific Computing · Data Science</p>
-        <p class="hero-text">
+
+        <div class="hero-text">
           <p>Hi there!</p>
-          <p>I am pursuing two B.Sc. degrees: Physics at LMU Munich and Data Science at TUM.
-          currently exploring early-stage research interests in astrophysics, scientific computing, and data-driven astronomy.</p>
-        </p>
+          <p>
+            I am pursuing two B.Sc. degrees: Physics at LMU Munich and Data Science at TUM,
+            currently exploring early-stage research interests in astrophysics, scientific computing,
+            and data-driven astronomy.
+          </p>
+        </div>
+
         <a class="scroll-link" href="#about">Explore ↓</a>
       </div>
     </section>
@@ -530,9 +548,10 @@
       <section class="content-section" id="travel">
         <h2>Travel & Reflections</h2>
 
-        <p>When the pandemic ended, it coincided with my graduation. 
-          I decided not to follow the traditional path of continuing my studies, 
-          and instead chose to start working, explore my interests, and travel at the same time. 
+        <p>
+          When the pandemic ended, it coincided with my graduation.
+          I decided not to follow the traditional path of continuing my studies,
+          and instead chose to start working, explore my interests, and travel at the same time.
         </p>
 
         <p>
